@@ -25,10 +25,10 @@ class hornedBeast extends Component {
                 <Col>
 
                     <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={this.props.image} alt={this.props.title} />
+                        <Card.Img variant="top" src={this.props.data.image_url} alt={this.props.data.title} onClick={()=> this.props.handleModal(this.props.data)}/>
                         <Card.Body>
-                            <Card.Title>{this.props.title}</Card.Title>
-                            <Card.Text>{this.props.description}</Card.Text>
+                            <Card.Title>{this.props.data.title}</Card.Title>
+                            <Card.Text>{this.props.data.description}</Card.Text>
                             <Button variant="primary" onClick={() => { this.handleClick() }}>Like 👍</Button>
                             <p>💖{this.state.favorites}</p>
                         </Card.Body>
