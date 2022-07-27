@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./filtering.css";
-import data from '../../data/data.json'
 
 class Filtering extends Component {
 
