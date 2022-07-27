@@ -1,8 +1,8 @@
-import "./main.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import HornedBeast from '../horned-beast/horned-beast';
 import Row from 'react-bootstrap/Row';
+import "./main.css";
 import Filtering from "../filtering/filtering ";
 
 
