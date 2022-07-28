@@ -52,7 +52,7 @@ class main extends Component {
                 <Row xs={1} md={3} >
 
                     {this.state.data.map((item, index) => {
-                        return <HornedBeast key={item._id} modeData={this.props.modeData} data={item} handleModal={this.props.handleModal} />
+                        return <HornedBeast key={item._id} handleMode={this.handleMode} modeData={this.state.modeData} data={item} handleModal={this.props.handleModal} />
                     }
                     )}
                 </Row>

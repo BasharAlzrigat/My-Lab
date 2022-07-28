@@ -1,3 +1,11 @@
 .card-container{
     width: fit-content;
 }
+.card-dark{
+    background-color: #212529;
+    color: azure;
+}
+.card-light{
+    background-color: #f8f9fa;
+    color: #212529;
+}

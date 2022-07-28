@@ -5,3 +5,10 @@
     justify-content: center;
     color: azure;
 }
+.footer-dark{
+    padding: 20px;
+    color: #212529;
+    display: flex;
+    justify-content: center;
+    background-color: azure;
+}

@@ -9,7 +9,7 @@ class NavBar extends Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg={this.props.modeData?"dark":"light"} variant={this.props.modeData?"dark":"light"}>
           <Container>
             <Navbar.Brand href="#home">{this.props.title}</Navbar.Brand>
             <Nav className="me-auto">
