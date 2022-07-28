@@ -11,9 +11,17 @@ class App extends Component {
     super(props);
     this.state = {
       showModal: false,
-      modalData: {}
+      modalData: {},
+      modeData: true
     }
   }
+handleMode = () => {
+  this.setState({
+    modeData: !this.state.modeData
+  })
+  console.log("xxxxxxxxx")
+}
+
   handleModal = (modalData) => {
     this.setState({
       showModal: !this.state.showModal,
@@ -30,10 +38,10 @@ handleCloseModal = () => {
   render() {
     return (
       <div className="App">
-        <Header />
-        <SelectedBeast modalData={this.state.modalData} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal}/>
-        <Main data={data} handleModal={this.handleModal}/>
-        <Footer />
+        <Header modeData={this.state.modeData}/>
+        <SelectedBeast modeData={this.state.modeData} modalData={this.state.modalData} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal}/>
+        <Main modeData={this.state.modeData} data={data} handleModal={this.handleModal} handleMode={this.handleMode}/>
+        <Footer modeData={this.state.modeData}/>
       </div>
     );
   };
