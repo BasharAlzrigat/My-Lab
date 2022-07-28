@@ -1,18 +1,32 @@
 
-#horned-select{
-
-    margin-bottom: 30px;
-
+.lable-dark{
+    color: #ffffff;
 }
-.mb-3 {
+/* .mb-3 {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 .form-select {
     transition: none;
-    width: 400px;
+}
+.search-bar{
+    padding-bottom:50px ;
 }
 
+.filtering {
+    display: flex;
+    align-items: center;
+}
+.filtering-container {
+    /* display: flex; */
+    margin: 0 auto;
+    width: 28%;
+    /* flex-direction: column-reverse; */
+}
+.btn-switcher {
+    margin-top: 15px;
+    margin-left: 50px;
+}

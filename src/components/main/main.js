@@ -8,43 +8,54 @@ import Filtering from "../filtering/filtering ";
 
 class main extends Component {
 
-constructor(props){
-    super(props)
-    this.state = {
-        data: this.props.data,
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: this.props.data,
+        }
     }
-}
-handleChange = (e) => {
-    e.preventDefault()
-if(e.target.value === "0"){
-    this.setState({
-        data: this.props.data
-    })
 
-}else if (e.target.value !== "0") {
+    handleChange = (e) => {
+        e.preventDefault()
+        if (e.target.value === "0") {
+            this.setState({
+                data: this.props.data
+            })
 
-    let newData = this.props.data.filter(item => {
-        return item.horns === parseInt(e.target.value)
-    });
-this.setState({
-    data: newData
-})
+        } else if (e.target.value !== "0") {
 
-
+            let newData = this.props.data.filter(item => {
+                return item.horns === parseInt(e.target.value)
+            });
+            this.setState({
+                data: newData
+            })
+        }
     }
-}
+    handleSearch = (e) => {
+        e.preventDefault()
+        if (e.target.value.length > 0) {
+            this.setState({
+                data: this.props.data.filter(item => item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+            })
+        }else{
+            this.setState({
+                data: this.props.data
+            })
+        }
+    }
 
     render() {
         return (
-            <div className="main">
-                <Filtering handleChange={this.handleChange}/>
-                    <Row xs={1} md={3} >
+            <div className={this.props.modeData ? "main" : "main-dark main"} >
+                <Filtering handleSearch={this.handleSearch} modeData={this.props.modeData} handleChange={this.handleChange} handleMode={this.props.handleMode} />
+                <Row xs={1} md={3} >
 
-                {this.state.data.map((item) => {
-                    return <HornedBeast data={item} handleModal={this.props.handleModal}/>
-                }
-            )}
-            </Row>
+                    {this.state.data.map((item, index) => {
+                        return <HornedBeast key={item._id} modeData={this.props.modeData} data={item} handleModal={this.props.handleModal} />
+                    }
+                    )}
+                </Row>
             </div>
         );
     }
