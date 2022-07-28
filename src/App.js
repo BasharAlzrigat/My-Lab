@@ -15,12 +15,12 @@ class App extends Component {
       modeData: true
     }
   }
-handleMode = () => {
-  this.setState({
-    modeData: !this.state.modeData
-  })
-  console.log("xxxxxxxxx")
-}
+  handleMode = () => {
+    this.setState({
+      modeData: !this.state.modeData
+    })
+    console.log("xxxxxxxxx")
+  }
 
   handleModal = (modalData) => {
     this.setState({
@@ -29,19 +29,19 @@ handleMode = () => {
     })
   }
 
-handleCloseModal = () => {
-  this.setState({
-    showModal: false
-  })
-}
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    })
+  }
 
   render() {
     return (
       <div className="App">
-        <Header modeData={this.state.modeData}/>
-        <SelectedBeast modeData={this.state.modeData} modalData={this.state.modalData} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal}/>
-        <Main modeData={this.state.modeData} data={data} handleModal={this.handleModal} handleMode={this.handleMode}/>
-        <Footer modeData={this.state.modeData}/>
+        <Header handleMode={this.handleMode} modeData={this.state.modeData} />
+        <SelectedBeast modeData={this.state.modeData} modalData={this.state.modalData} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
+        <Main modeData={this.state.modeData} data={data} handleModal={this.handleModal} handleMode={this.handleMode} />
+        <Footer handleMode={this.handleMode} modeData={this.state.modeData} />
       </div>
     );
   };

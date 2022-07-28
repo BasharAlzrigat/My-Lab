@@ -6,7 +6,7 @@ class header extends Component {
   render() {
     return (
       <>
-      <NavBar title = "Beast World"/>
+      <NavBar handleMode={this.props.handleMode} modeData={this.props.modeData} title = "Beast World"/>
       </>
     );
   }
